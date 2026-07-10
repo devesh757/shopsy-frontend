@@ -33,7 +33,7 @@ function AdminPage() {
     api
       .get("/api/v1/product")
       .then((res) => {
-        setProducts(res.data);
+        setProducts(Array.isArray(res.data) ? res.data : []);
         setLoading(false);
       })
       .catch((err) => console.error(err));

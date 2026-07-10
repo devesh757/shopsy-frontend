@@ -18,7 +18,7 @@ function OrdersPage() {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        setOrders(res.data);
+        setOrders(Array.isArray(res.data) ? res.data : []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -100,7 +100,7 @@ function OrdersPage() {
               {/* Order Items */}
               <div className="px-6 py-4">
                 <div className="space-y-3">
-                  {order.products.map((item) => {
+                  {(order.products || []).map((item) => {
                     const product = item.product || {};
                     return (
                       <div key={item._id || product._id} className="flex items-center gap-4">

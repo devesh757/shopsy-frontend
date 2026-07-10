@@ -9,7 +9,7 @@ function CartPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const total = cart.items.reduce(
+  const total = (cart.items || []).reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );

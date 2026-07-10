@@ -65,7 +65,7 @@ function HomePage() {
 
     api
       .get("/api/v1/product", { params })
-      .then((res) => setProducts(res.data))
+      .then((res) => setProducts(Array.isArray(res.data) ? res.data : []))
       .catch((err) => console.error(err));
   }, [q, category, minPrice, maxPrice]);
 
