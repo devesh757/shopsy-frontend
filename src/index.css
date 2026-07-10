@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-shopsy-blue: #2874f0;
+  --color-shopsy-yellow: #ffe500;
+  --color-shopsy-gold: #f9a825;
+  --color-shopsy-dark: #212121;
+  --color-shopsy-gray: #878787;
+  --color-shopsy-light: #f1f3f6;
+  --color-shopsy-white: #ffffff;
+  --color-shopsy-green: #388e3c;
+  --color-shopsy-red: #e53935;
+  --color-shopsy-orange: #fb641b;
+}
+
+@layer base {
+  body {
+    @apply bg-shopsy-light text-shopsy-dark font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-shopsy-blue text-white px-6 py-2 rounded-sm font-medium text-sm hover:bg-blue-600 transition-colors duration-200 uppercase;
+  }
+  .btn-cart {
+    @apply bg-shopsy-yellow text-shopsy-dark px-8 py-2 rounded-sm font-medium text-sm hover:bg-amber-400 transition-colors duration-200 uppercase;
+  }
+  .btn-orange {
+    @apply bg-shopsy-orange text-white px-8 py-2 rounded-sm font-medium text-sm hover:bg-orange-700 transition-colors duration-200 uppercase;
+  }
+  .product-card {
+    @apply bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100;
+  }
+  .section-title {
+    @apply text-xl font-medium text-shopsy-dark mb-4;
+  }
+  .price-tag {
+    @apply text-lg font-bold text-shopsy-green;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.hero-slide {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-slide-up-delay-1 {
+  animation: slideUp 0.5s ease-out 0.1s both;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slideUp 0.5s ease-out 0.2s both;
+}
+
+.animate-slide-up-delay-3 {
+  animation: slideUp 0.5s ease-out 0.3s both;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-img {
+  transition: transform 0.4s ease;
+}
