@@ -36,7 +36,7 @@ function CartPage() {
             quantity: item.quantity,
           })),
           total: total,
-          shippingAddress: shippingAddress,
+          shippingAddress: "keshopur,Bihar",
         },
         {
           headers: { Authorization: `Bearer ${token}` },
