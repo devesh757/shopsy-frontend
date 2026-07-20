@@ -36,7 +36,7 @@ function CartPage() {
             quantity: item.quantity,
           })),
           total: total,
-          shippingAddress: shippingAddress,
+          shippingAddress: ",vaishnav vihar colony,Akhri bypass,varanasi,UttarPradesh,221105,
         },
         {
           headers: { Authorization: `Bearer ${token}` },
